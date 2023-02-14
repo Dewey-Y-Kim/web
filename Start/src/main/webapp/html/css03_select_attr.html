@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{width:300px; height:300px;}
+        /*속성선택자
+            $= : 특정값으로 끝나는 테그를 선택
+            = : 같을때
+            ^= : 특정 값으로 시작할때
+            *= : 특정 값을 포함할 때        
+            */
+
+        img[src$=png]{/*img 객체중 src 속성중([]) png로 끝나는 경우 적용*/
+            border:5px solid red;
+        }
+        img[title=logo]{ /* */
+            border:5px dotted blue;
+        }
+        img[src^='./img/j']{border:5px solid green;}
+        img[src*='1']{border:5px double yellow;}
+    </style>
+</head>
+<body>
+    <img src="./img/jeju_map.jpg"/>
+    <img src="./img/sky1.gif" />
+    <img src="./img/arrow_1.png" title="logo"/>
+</body>
+</html>

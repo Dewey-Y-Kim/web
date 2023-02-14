@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            border:1px solid grey;
+        }
+        /* left, top, right, bottom */
+        .div1{
+            background-color: pink;
+            position:fixed;
+            right:50px; bottom:10px;
+        }
+        .div2{
+            background-color: lightblue;
+            position:absolute; /* 기본적으로 static 적용 흐름에 맞춰 정렬좌표설정 불가
+                                relative 원래공간유지(원위치를 기준으로), absolute 공간반납(위에뜸.), fixed 공간반납 속성이어야 좌표지정 가능.
+                                */
+            left:100px; top:100px;
+            z-index:3; /*객체가 겹칠때 순서정하기 값제한 없음 작을수록 뒤. position속성이 적용된다.(static이동불가)*/
+        }
+        .div3{
+            background-color: olivedrab;
+            position:relative;
+            left: 200px;top:-100px; /*absolute는 화면기준으로 이동 , relative는 원래위치기준으로 이동*/
+        }
+        .div4{
+            background-color: coral;
+        }
+        img{
+            width:100px;
+            height:100px;
+        }
+        /*하위객체의 좌표설정은 상위객체의 position의 영향을 받는다. position이 absolute, relative,
+          fixed인 경우에는 해당 객체가 기준점이다.
+          static인 경우 기준점은 body이다.*/
+        #p1{
+            position: absolute;
+            left: 50px;
+            top:50px;
+        }
+        #p2{
+            position:absolute;
+            top:50px;
+            left:50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2">
+        <img src="./img/KakaoTalk_20221225_121403241_01.jpg" id="p1"/>
+    </div>
+    <div class="div3"></div>
+    <div class="div4">
+        <img src="./img/sky1.gif" id="p2"/>
+    </div>
+</body>
+</html>

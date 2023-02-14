@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 폼 양식 만들기 </h1>
+    <pre>
+        input 속성
+        name : 변수. 서버로 데이터를 보낼때 사용하는 변수.
+        size : 입력창의 길이 대략 문자수
+        maxlength : 입력 가능한 최대 글자수
+        readonly : 읽기 전용
+        disabled : 비활성화
+        value : 값설정
+        checked : checkbox, radio 에서 기본 선택상태 설정. 배열형태로 value값이 전송됨.
+        textarea : 여러줄의 문자열을 입력할 수 있는 테그
+    </pre>
+    <!--a태그를 이용한 정보전송 예시-->
+    <a href="asdf.jsp?name=김도형&tel=123-1234-1234">클릭</a>"
+    <form action="userdata.java" method="get">
+        아이디 : <input name="userid" type="text" size="12" maxlength="10" placeholder="ID 입력"/> <br/>
+        password : <input type="password" name="userpw" placeholder="비밀번호 입력"/> <br/>
+        E-mail : <input type="email" name="useremail" />
+        성별 : <input type="radio" name="sex" value="M"/> male
+        <input type="radio" name="sex" value="F" checked/> female
+        <input type="radio" name="sex" value="U"/> I don`t want report <br/>
+        취미 : <input type="checkbox" name="hobby" value="kd" checked> 검도
+        <input type="checkbox" name="hobby" value="baseball"> 야구
+        <input type="checkbox" name="hobby" value="basketball" checked> 농구
+        <input type="checkbox" name="hobby" value="tennis"> 테니스 <br/>
+        인사말:<textarea name="introduce" rows="10" cols="50" placeholder="인사말을 남겨주세요">값이 입력되는 곳</textarea> <br/>
+        <!-- multiple 다중 선택 기능, size 화면표시 개수, value없을시 테그내용이 value값으로 처리됨-->
+        관심분야 : <select name="interest" size="3" multiple>
+            <option>==선택==</option>
+            <option value="bicycle">자전거</option>
+            <option>등산</option>
+            <option>조깅</option>
+            <option selected>사진</option>
+            <option>IT</option>
+            <option>경제</option>
+        </select> <br/>
+        파일첨부 : <input type="file" name="filename1"/><br/>
+
+        <input type="submit" value="전송하기"> <!--submit을 가짐 form태그안에 있어야 한다.action으로 접속하게 된다.-->
+        <input type="button" value="전송하기"> <!--submit을 가지지 않음-->
+        <button>전송하기</button><br/> <!--submit을 가짐 form태그안에 있어야 한다.action으로 접속하게 된다.-->
+        숨김데이터 : <input type="hidden" name="nick" value="ggm"/> <br/> <!--화면에 보이지 않는 숨김데이터를 처리할때 사용-->
+
+                <!--서버로 정보가 전송되도록 설정-->
+        <input type="image" src="./img/arrow_1.png" width="30" height="10"/>
+        <input type="reset" value="다시쓰기"/><!--form안의 컴퍼넌트component들에 대한 초기화-->
+<hr/>
+
+        date : <input type="date" name="date1"/><br/><!--연월일까지-->
+        datetime-local : <input type="datetime-local" name="date2"/><br/> <!--연월일 시분까지 선택-->
+        month : <input type="month" name="date3"/> <br/><!-- 연 월까지-->
+        week : <input type="week" name="date4" /> <br/>
+        color : <input type="color" name="color1" /> <br/>
+        number : <input type="number" name="number1" min="11" max="20" step="0.5"/> <br/>
+        range : <input type="range" name="r1" min="10" max="16" value="3"/> <br/>
+
+    </form>
+</body>
+</html>

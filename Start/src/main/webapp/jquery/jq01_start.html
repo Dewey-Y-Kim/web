@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Jquery 외부파일로 연결 -->
+<Style>
+	#view{background:yellow;}
+</Style>
+<script src='jquery-3.6.3.js'></script>
+<script>
+	console.log(111);
+	
+	//jquery code 가능
+	$(document).ready(function(){
+		//jquery 실행문
+		$("#view").append("JQuery 영역이 실행됨");
+		console.log(22);
+	});
+	console.log(333);
+	document.write("자바스크립트 실행됨");
+</script>
+
+</head>
+<body>
+	<div id="view"></div>
+	<h1>Jquery Test....</h1>
+</body>
+</html>

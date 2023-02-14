@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<Script>
+	$(function(){
+		$('div:eq(0)').css('border','1px solid red');
+		$('div:gt(0)').css('width','300px').css('height','350px').css('background-color','pink').css('border','10px solid blue');
+		$('div:nth-child(3)').css('position','absolute').css('left','400px').css('top','150px'). css('margin','50px').css('pedding','20px').css('right','100px').css('background-color','lightblue');
+		var width = $("div:eq(2)").width();
+		var height = $("div:eq(2)").height();
+		$("div:eq(2)").append("width"+width+",height= "+height+"</h2>");
+		
+		//$("div:eq(2)").width("450px");
+		// innnerWidth(), innerHeight() ; padding을 포함한 폭과 높이
+		var innerwidth =$("div:last").innerWidth();
+		var innerheight = $("div:last").innerHeight();
+		$('div:eq(2)').append("<h2>iWidth="+innerwidth+",iHeight="+innerHeight+"</h2>");
+	});
+</Script>
+</head>
+<body>
+	<div>수치조작 메소드</div>
+	<div><h2>12345</h2></div>
+	<div></div>
+</body>
+</html>

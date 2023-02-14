@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select_state</title>
+    <style>
+        /* 상태선택자 
+        :focus -> 커서가 컴퍼넌트에 들어가면
+        :checked -> 컴퍼넌트를 체크하면
+        :disabled -> 비활성화 된 컴퍼넌트에 적용
+        :enabled -> 활성화 된 컴퍼넌트에 적용
+        */
+        input:focus{
+            background-color: yellow;
+            font-size:2em;
+            color:aqua;
+        }
+
+        input:checked{
+            width:50px; height:50px
+        }
+        input:disabled{
+            background:blue;
+        }
+        input:enabled{
+            background-color: pink;
+        }
+        /*
+        
+        */
+    </style>
+</head>
+<body>
+    <form action="userdata.java" method="get">
+        아이디 : <input name="userid" type="text" size="12" maxlength="10" placeholder="ID 입력"/> <br/>
+        password : <input type="password" name="userpw" placeholder="비밀번호 입력"/> <br/>
+        E-mail : <input type="email" name="useremail" disabled/>
+        성별 : <input type="radio" name="sex" value="M"/> male
+        <input type="radio" name="sex" value="F" checked/> female
+        <input type="radio" name="sex" value="U"/> I don`t want report <br/>
+        취미 : <input type="checkbox" name="hobby" value="kd" checked> 검도
+        <input type="checkbox" name="hobby" value="baseball"> 야구
+        <input type="checkbox" name="hobby" value="basketball" checked> 농구
+        <input type="checkbox" name="hobby" value="tennis"> 테니스 <br/>
+    </form>
+</body>
+</html>

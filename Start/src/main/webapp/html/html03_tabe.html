@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표만들기</title>
+</head>
+<body>
+    <h1>표 만들기</h1>
+    <pre> 
+        table 태그 : 표의 시작
+        tr : 표내의 줄(행)의 생성
+        th : 첫번째 줄의 내용을 강조하고자 할때. 가운데정렬, 진하게
+        td : 표내의 칸(셀)의 생성
+        셀은 내용의 양만큼 폭과 높이가 설정된다. - 일괄로...
+        caption: 제목태그, 항상 표의 위에 표시 전체 표의 중앙에 표시.
+    </pre>
+    <table border="01">
+        <caption><i>표의 제목</i></caption>
+        <tr>
+            <th><i>제목</i></th>
+            <th>내용</th>
+            <th>비고</th>
+        </th>
+        </tr>
+        <tr>
+            <td>첫번째 칸</td>
+            <td>
+                <ul>
+                    <li>아이폰</li>
+                    <li>아이패드</li>
+                    <li>맥북</li>
+                </ul>
+            </td>
+            <td>
+                아무거나 넣어봐야죠
+            </td>
+        </tr>
+        <tr>
+            <td>두번째 줄 첫번째 칸</td>
+            <td>두번째 칸</td>
+            <td>
+                <ol>
+                    <li>갤럭시북</li>
+                    <li>갤럭시폰</li>
+                    <li>갤럭시탭</li>
+                    <li>갤럭시워치</li>
+                    
+                </ol>
+                
+            </td>
+            
+        </tr>
+        
+    </table>
+    <hr/>
+    <pre>
+        표에서 행의 수와 칸의 수가 다를때 
+        colspan 속성 : 칸을 병합
+        rowspan 속성 : 행을 병합
+    </pre>
+    <table border="1">
+        <tr>
+            <td>1111</td>
+            <td colspan="2">2222</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                3333
+            </td>
+            <td>4444</td>
+        </tr>
+        <tr>
+            <td>5555</td>
+            <td rowspan="2">6666</td>
+            <td>7777</td>
+        </tr>
+        <tr>
+            <td>8888</td>
+            <td>9999</td>
+        </tr>
+    </table>
+</body>
+</html>

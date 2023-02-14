@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li{margin:0;padding:0;list-style-type:none;}
+        #menu li{
+            float:left;
+            height:50px;
+            line-height:50px;
+            width:150px;
+        }
+        /*구조 선택자 
+            2n: 2의 배수번째 3n: 3의 배수번째 2n+1 : 홀수번째
+            :nth-child(2n)
+        */
+        #menu>li:nth-child(2n+1){
+            background-color: lightblue;
+        }
+        #menu>li:nth-child(2n){
+            background-color: yellow;
+        }
+        /* :first-child -> 처음객체
+           :last-child -> 마지막객체
+        */
+        #menu>li:first-child{
+            border-radius:20px 0px 0px 20px;
+        }
+        #menu>li:last-child{
+            border-radius:0px 20px 20px 0px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>AAAAAAAAA</li>
+        <li>BBBBBBBBB</li>
+        <li>CCCCCCCCC</li>
+        <li>DDDDDDDDD</li>
+        <li>EEEEEEEEE</li>
+        <li>FFFFFFFFF</li>
+        <li>GGGGGGGGG</li>
+        <li>HHHHHHHHH</li>
+        <li>IIIIIIIII</li>
+    </ul>
+</body>
+</html>

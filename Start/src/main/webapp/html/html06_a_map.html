@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1개의 이미지를 이용하여, 여러곳으로 링크 걸기</h1>
+    <img src="./img/jeju_map.jpg" usemap="#jeju_map"/>
+        <pre>
+            여러곳으로 링크걸기
+            area 태그 : 링크걸기 테그
+            shape 속성 : 링크 모양 (circle, rect, poly)
+            coords 속성 : 좌표
+            map테그는 레이아웃 유지를 위해 가급적 가장 밑으로..
+        </pre>
+    <map name="jeju_map">
+        <!-- 한라산                    x   y  r -->
+        <area shape="circle" coords="333,268,40" href="http://jeju.go.kr" target="_blank"/>
+        <!-- 제주공항 사각형          x1,y1,x2,y2-->
+        <area shape="rect" coords="195,133,277,150" href="http://jejuair.net" target="_blank"/>
+        <!-- 협재해수욕장             x,y,x,y,x,y... 한쪽방향으로 순서대로 좌표지정-->
+        <area shape="poly" coords="20,248,78,200,140,248,72,250" href="./html01_index.html" target="_blank" />
+    </map>
+</body>
+</html>

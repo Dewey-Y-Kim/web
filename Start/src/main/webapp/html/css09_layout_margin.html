@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout</title>
+    <style>
+        body{
+            margin:0px;
+        }
+        .header{
+            height:200px;
+            background-color: beige;
+        }
+        .container{
+            background-color:darkgray;
+            width:1000px;
+            margin:0 auto; /* div를 전체 폭의 가운데로. */
+        }
+        .footer{
+            height:100px;
+            background-color: beige;
+        }
+        /* > 자손선택자 /  공백문자 후손 선택자*/
+        .header>div{
+            background-color:yellow;
+            width:1000px;
+            height:150px;
+            margin:0 auto;
+            /*px, pt, cm, mm, in(inch), em: 1em=기본크기 1.2em 0.9em, %..... 기본크기는 16px정도..*/
+            font-size: 3em;
+            text-align:center; /* text-align 문자를 left, center, right로 좌우정렬 */
+            line-height:150px
+
+        }
+        /* 메뉴만들기 */
+        .topMenu, topMenu > li{
+            margin:0;
+            padding:0;
+            
+        }
+        .topMenu{
+            /* margin:auto;*/
+            /* background-color: red; 메뉴 위치파악*/
+            height:50px;
+            width:1000px;
+            margin:0 auto;
+        }
+        .topMenu >li{
+            float:left; 
+            /* background-color: aqua; */
+            list-style-type: none;
+            width:20%;
+            height:50px;
+            line-height:50px;
+            text-align:center; /* 좌우정렬 left,right,center */
+            font-size:1.1em;
+            color:blueviolet; /*링크글씨는 컬러변경 안됨.
+            /* margin: 1% 5%; */
+        }
+        /*
+        a테그 링크시 스타일
+            : 가상클래스.
+            :link -> 링크시, :visited -> 방문페이지, :hover -> 마우스오버, :active -> 엑티브(누른상태)
+        text-decoration : underline(밑줄), overline(윗줄), line-through(취소선), none
+        */
+        
+        /* a:active{ 링크를 누른 상태일때
+            color:red;
+        }*/
+        /* a:link{/*a 태그가 링크 상태 
+            color:green;
+            text-decoration:none;
+        } */ 
+        /* a:visited{ /*방문한 링크일때 
+            color:blue;
+            text-decoration: none;
+        }*/
+        
+        /* a:hover{ /*마우스가 위에 놓였을때
+            color:orange;
+            text-decoration: underline;
+        } */
+        
+        a:link, a:visited{
+            color:green;
+            text-decoration:none;
+        }
+        
+        a:hover{
+            color:red;
+            font-weight:bold;
+            text-decoration:none;
+        }
+
+        
+
+
+        </style>
+</head>
+<body>
+    <div class="header">
+        
+        <div>
+            멀티캠퍼스
+        </div>
+        <ul class="topMenu">
+            <li>
+                <a href="html01_index.html">홈</a>
+            </li>
+            <li>
+                <a href="https://nate.com" target="_blank">네이트</a>
+            </li>
+            <li>
+                <a href="#">커뮤니티</a>
+            </li>
+            <li>
+                <a href="#">로그인</a>
+            </li>
+            <li>
+                <a href="#">고객센터</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <br/>
+        <h1>컨텐츠</h1>
+        <img src="./img/KakaoTalk_20221225_121403241_01.jpg" width="400px">
+    </div>
+    <div class="footer">
+        <br/>
+        <p>하단</p>
+    </div>
+</body>
+</html>
