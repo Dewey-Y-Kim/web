@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.backColor{background-colorred}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<Script>
+	$(function(){
+		//이벤트 처리방법 1: click -> onclick
+		/*
+		$('h1').click(function(){
+			$('div').append("h1태그가 클릭됨<br/>");
+			//this : 이벤트가 발생한 태그
+			$(this).toggleClass('backColor');
+		})
+		*/
+		
+		/*  .on('이벤트', 처리)
+		$('h1').on('click',function(){
+			$(this).css('background-color','lightblue');
+		})
+		*/
+		
+		// mouseover, mouseout// mouseenter,mouseleave
+		/*	json  :회원정보
+			var member={
+				username : "홍길동",
+				tel : "123-1234-1234",
+				memberOutput : function(){
+					console.log('이름=',hon gil dong)
+				}		
+		}
+		*/
+		
+		/* */
+		$('h1').on({mouseenter:function(){
+			$(this).css('background-color','pink');
+		},mouseleave:function(){
+			$(this).css('background-color','lightblue')
+		}});
+		
+		/* 이벤트 처리 5
+		$('button').on('click focus',function(){
+			$(this).css('background-color','yellow').css('color','red');
+		})
+		*/
+		
+		/* 이벤트 처리 6 ajax javascript jquery 로 이미 로딩된 페이지의 일부내용 변경, 그 내용에서 이벤트 발생, document 객체를 선택차로 이벤트 처리 하여야.
+			on('이벤트종류','선택자',함수)
+		
+		$(document).on('click','h1#h',function(){
+			$(this).css('color','red');
+		});
+		*/
+		/* 이벤트 처리 7 메소드 이용 document.getElementById('h').addEventListener()
+		
+		*/
+		document.getElementById('h').addEventListener('click',function(){
+				$(this).css('font-size','1.5em');
+		});
+		
+		/* 기본이벤트 해제
+		*/
+		$('a[href^="http"]').on('click',function(){
+			// a태그 기본이벤트해제
+			event.preventDefault();
+			console.log('이벤트 발생함.');
+			$(this).css('background-color','blue');
+		});
+		//$('a[href%=".com"]')	.com으로 끝나는 a테그
+		
+	});
+</Script>
+</head>
+<body>
+<h1> jQuery 이벤트 처리</h1>
+<h1 id='h'> jQuery 이벤트 처리</h1>
+<h1> jQuery 이벤트 처리</h1>
+<h1> jQuery 이벤트 처리</h1>
+<div style="background-color:yellow"></div>
+<button>123</button>
+<button>456</button>
+<button>789</button>
+<a href="http://192.168.0.199" type=blank> nas </a>
+</body>
+</html>

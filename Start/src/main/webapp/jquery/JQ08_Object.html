@@ -18,6 +18,19 @@
 		var innerwidth =$("div:last").innerWidth();
 		var innerheight = $("div:last").innerHeight();
 		$('div:eq(2)').append("<h2>iWidth="+innerwidth+",iHeight="+innerHeight+"</h2>");
+		// outerWidth(), outerHeight() : border와 padding을 포함한 폭과 높이를 구한다.
+		$('div:last').append("<h2>outerWidth =" + $('div:eq(2)').outerWidth()+ "</h2>");
+		$('div:last').append("<h2>outerHeight=" + $('div:eq(2)').outerHeight()+"</h2>");
+		$('div:eq(1)').append('<br/>position().left='+$('div:last').position().left + ',position().top='+$('div:last').position().top);
+		
+		//offset(); 좌표(left, top) - border를 제외한 좌표
+		var xY = $('div:last').offset();
+		$('div:eq(1)').append('<br/>offset().left='+xY.left+', offset().top='+xY.tol);
+		// Scroll 바의 위치를 설정하거나 구하기
+		//$(window).scrollTop(200);
+		//$(window).scrollLeft(300);
+		$('div:eq(1)').append('<br/>scrollTop()='+ $(window).scrollTop()+", scrollLeft()="+$(window).scrollLeft());
+		
 	});
 </Script>
 </head>

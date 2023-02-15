@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{width:100px; height:100px; position:relative;}
+	#d1{background-color: red; border: 1px solid blue;}
+	#d2{background-color: yellow; border: 1px solid green;}
+	#d3{background-color: blue; border: 1px solid red;}
+</style>
+<link rel="stylesheet" href="jquery-ui.min.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+<!-- 
+종류 확인 https://jqeuryui.com/easing
+https://jqeuryui.com/download/all 에서 jquery-ui 를 다운
+1. jquery-ui.min.css
+2. jquery
+3. jquery.ui.min.js
+ -->
+<script>
+	$(function(){
+		$('#d1').animate({left : 800, width:200,top:200,opacity:1},4000,'easeOutBounce');
+		$('#d2').animate({left:900, top : 100},3000).animate({left:200, top :20,height:0, width:0, opacity:0},1000).animate({top:600,left: 700},4000);
+		$('#d3').delay(2000).animate({left :500, top:200, width:200, height:200},2000,'swing',function(){
+			$('#d3').css('background-color','green');
+			alert('종료');
+		});
+		$('#d1, #d2, #d3').mouseover(function(){
+			//$(this).stop();
+			$(this).stop(true);
+		});
+	});
+	
+</script>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+</body>
+</html>

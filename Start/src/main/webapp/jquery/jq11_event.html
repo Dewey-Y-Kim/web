@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+	$(function(){
+		var sel = "<select>";
+		sel += "<option value = 'color'> 글자색 </option>";
+		sel += "<option value='background-color'>배경색</option>";
+		sel += "</select>";
+		//컬러명 "red", "#ff0000", ->"#f00", rgb(255,0,0)
+		var rgb= ['rgb(255, 0, 0)', 'blue', '#0f0', '#aaa', 'cyan', 'pink','yellow', 'black','white'];
+		var colorName = ['빨강','파랑','초록','회색','하늘색','분홍', '노랑', '검정','흰색'];
+		//map(function(data,idx))
+		var colorSel = '<select>';
+		rgb.map(function(data,idx){
+			colorSel+= "<option value='"+data+"'>"+colorName[idx]+"</option>"
+		});
+		colorSel+="</select>";
+		
+		$("#menu").append(sel);
+		$("#menu").append(colorSel);
+		
+		$('#menu>select:eq(1)').change(function(){
+			$('#article').css($('#menu>select:first').val(),$("#menu>select:last").val());
+		});
+		$("#menu").append('<input type ="button" value="-">');
+		$("#menu").append('<input type ="button" value="0">');
+		$("#menu").append('<input type ="button" value="+">');
+		
+		$("#menu>input").click(function(){
+			// .index() 이벤트발생 버튼 input테그중 몇번째인지 index를 구할 수 있다.
+			var idx= $("#menu>input").index(this);
+			var fontsize= parseInt($('#article').css('font-size'));
+			
+			if(idx==0){
+				//idx==0
+				fontsize--;
+				console.log("0");
+				
+				
+			}else if(idx==1){
+				//idx==1 
+				// $('article').function(){
+				fontsize=basicsize;	
+				console.log("1");
+			}else if(idx==2){
+				//idx==2
+				fontsize++;
+				console.log("2");
+			}
+			// 문자 크기 변경하기
+			console.log(fontsize);
+			$('#article').css('font-size',fontsize+'px');
+			$(this).css('font-size','1.5em');
+		})
+		
+		console.log($("#article").css('font-size'));
+		var basicsize=parseInt($("#article").css('font-size'));
+	});
+</script>
+</head>
+<body>
+<div id='menu'>
+</div>
+<hr/>
+<div id='article'>
+	<ul>
+		<li>우선 데스크탑에 비해 공간을 덜 차지한다. 공간 절약은 일체형 PC나 미니 PC라는 대안도 있지만 휴대까지 할 수 있다는 점에서는 노트북이 명백히 우위이다. 게다가 노트북은 기본적으로 Wireless를 표방한 제품이므로 선 정리 또한 최소화할 수 있다. Wi-Fi, 무선 마우스/터치패드, 배터리 모드로 사용하면 이론적으로 선 하나도 없이 깔끔하게 쓰는 것도 얼마든지 가능하다.</li>
+		<li>또한 키보드, 모니터, 스피커 등의 웬만한 인터페이스 기기가 다 탑재되어 나오기 때문에 신경 쓸 필요가 없다는 장점도 있다. 물론 그런 주변기기의 성능과 품질을 중시하는 사람도 있겠지만, 세상에는 그렇지 않은 소비자가 다수를 차지한다(…).</li>
+		
+	</ul>
+</div>
+</body>
+</html>

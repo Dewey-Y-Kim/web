@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+	img{width:100px; border:5px solid blue;})
+</style>
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+	$(function(){
+		//body 첫번째이미지 on('click',function(){})
+		var imgTag = '<img src="../img/sky1.gif"/>';
+		$('img').first().on('click',function(){
+			$('body').append(imgTag);
+		});
+		setInterval(function(){
+			$("img").first().trigger('click');
+		},1000);
+	});
+
+</script>
+</head>
+<body>
+<img src="../img/ka.jpg"/>
+</body>
+</html>

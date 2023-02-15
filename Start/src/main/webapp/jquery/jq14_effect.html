@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{ width=30%;}
+	div{}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+	$(function(){
+		var img=$("img:eq(0)");
+		
+		$('#hide').click(function(){
+			img.hide(3000,function(){
+				console.log('hide 발생');
+			});
+			
+		});
+		$('#show').click(function(){
+			img.show('fast');
+			
+		});
+		$('#toggle').click(function(){
+			img.toggle('slow');
+		});
+		$('#fadeIn').click(function(){
+			img.fadeIn('slow');
+		});
+		$('#fadeOut').click(function(){
+			img.fadeOut('slow');
+		});
+		$('#fadeToggle').click(function(){
+			img.fadeToggle('slow');
+		});
+		$('#slideUp').click(function(){
+			img.slideUp('slow');
+		});
+		$('#slideDown').click(function(){
+			img.slideDown('slow');
+		});
+		$('#slideToggle').click(function(){
+			img.slideToggle('slow');
+		});
+		
+	});
+</script>
+</head>
+<body>
+<div>
+	<input type="button" value="hide" id="hide"/>
+	<input type="button" value="show" id="show"/>
+	<input type="button" value="toggle" id="toggle"/>
+	<input type="button" value="fadeIn" id="fadeIn"/>
+	<input type="button" value="fadeOut" id="fadeOut"/>
+	<input type="button" value="fadeToggle" id="fadeToggle"/>
+	<input type="button" value="slideUp" id="slideUp"/>
+	<input type="button" value="slideDown" id="slideDown"/>
+	<input type="button" value="slideToggle" id="slideToggle"/>
+	
+	
+	
+</div>
+<hr/>
+<img src="../img/ka.jpg" width=30%/>
+<img src="../img/sky2.gif" width=30%/>
+
+
+</body>
+</html>
