@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #Clock{
+            width:300px;height: 70px; line-height:70px; font-size:3em; text-align:center; border:2px solid green;
+        }
+        #num{
+            width: 300px; height:300px; border:2px solid red; line-height:300px;
+            border-radius: 150px; font-size:5em; text-align: center;
+        }
+    </style>
+    <script>
+        //현재 시분초를 구하는 함수 1초당 1회 호출
+        function clockView() {
+            var now= new Date(); //날짜, 시간
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            document.getElementById("Clock").innerText = hour+':'+minute+':'+second;
+        }
+
+    </script>
+</head>
+<body >
+    <h1>setIterval</h1>
+    <div id="Clock"></div>
+    <script>
+        //일정한 시간 간격으로 반복호출하는 메소드
+        // setInterval(함수,간격ms) //clearInterval(interTimer)
+        setInterval("clockView()",1000);
+    </script>
+
+<h1>setTimeout</h1>
+    <div id="num">
+
+    </div>
+    <script>
+        //setTimeout을 이용한 함수 재호출
+        var n=1;
+        function setNum(){
+            document.querySelector("#num").innerText= n;
+            //         호출함수, 시간간격
+            var timer = setTimeout("setNum()",50);
+            if(n>100){ //n>100이면 timeout이 중지됨.
+                clearTimeout(timer);
+            }
+            n++;
+        }
+        setNum();
+    </script>
+    
+</body>
+</html>

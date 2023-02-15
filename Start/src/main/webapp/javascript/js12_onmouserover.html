@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #over{
+            background-color: olive;
+            padding: 50px;
+        }
+        #over>div{
+            background:yellow;
+            padding:50px;
+        }
+        #over h1{
+            background:red;
+            
+        }
+        #enter{
+            background-color: blue;
+            padding:50px;
+        }
+        #enter>div{
+            background-color: skyblue;
+            padding:50px;
+        }
+        #enter h1{
+            background-color: orange;
+        }
+
+    </style>
+    <script>
+        // onmouseover, onmouseout은 하위객체에서도 이벤트가 각각 발생한다.
+        // onmouseenter, onmouseleave 는 하위 객체에서 별도로 발생하지 않는다.
+        var Cnt=1,outCnt=1;
+        function eventTest(){
+            document.querySelector("h2") .innerHTML = Cnt;
+            Cnt++;   
+        }
+        function eventTest2(){
+            document.querySelector("h3").innerHTML =outCnt;
+            outCnt++;
+        }
+    </script>
+</head>
+<body>
+    <div id="over" onmouseover="eventTest()" onmouseout="eventTest2()">
+        <div>
+            <h1>onmouseover, onmouseout</h1>
+        </div>
+    </div>
+
+    <div id="enter" onmouseenter ="eventTest()" onmouseleave="eventTest2()">
+        <div>
+            <h1>onmouseenter, onmouseleave</h1>
+        </div>
+    </div>
+
+    <h2></h2>
+    <h3></h3>
+    
+</body>
+</html>

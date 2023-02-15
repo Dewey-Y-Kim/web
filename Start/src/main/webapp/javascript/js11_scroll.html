@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll</title>
+    <script>
+        var imgName = ["20221225.jpg","sky1.gif","sky2.gif","arrow_1.png"]
+        function setImage(){
+            var imgTag = "";
+            for(var i=0;i<imgName.length;i++ ) { // 0, 1,  3,  4
+                imgTag += "<img src='../img/"+imgName[i]+"' width=\'300\' /><br/>";
+            }
+            console.log(imgTag);
+            document.getElementById("imgView").innerHTML = imgTag;
+            console.log(window.scrollY, document.documentElement.scrollTop); //현재 스크롤바의 위치
+        }
+        function scrollAuto(){
+            window.scrollBy(0,2);
+            console.log('y=',window.scrollY);
+        }
+        var timer;
+
+    </script>
+</head>
+<body onload="setImage(), timer = setInterval('scrollAuto()',30)">
+    <h1>Scroll 이벤트</h1>
+    <!--onmouserover(onmouseenter)객체에 마우스가 들어오면
+        onmouserout(onmouseleave) 객체에 마우스가 나가면
+    -->
+    <div id="imgView" onmouseover="clearInterval(timer)" onmouseout="timer=setInterval('scrollAuto()',30)"> 
+    </div>
+
+</body>
+</html>

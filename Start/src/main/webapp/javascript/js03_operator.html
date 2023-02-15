@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>operator</title>
+</head>
+<body>
+    <script>
+        var n1=10,n2=4;
+        //산술연산자 +, -, *, /, %(나머지), ++, -- *,/ > +, -, %
+        var result = n1 * n2 +n2;
+        document.write(result+"<br/>");
+        document.write("result2= "+n1/n2+"<br/>");
+        document.write("result3="+(n1+n2));
+        var mod = n1 % n2;
+        document.write("<br/>result4="+mod);
+        // n1++; //= n1=n1+1; = n1+=1;
+        document.write("<br/>"+n1+"<br/>");
+        document.write(++n1+"<br/>");
+        // n2=n2+1;
+        // n2++;
+        ++n2;
+        //n2+=1;
+        document.write(n2);
+        document.write("<br/>");
+        var result4 = n2++ +50;
+        document.write(result4+"<br/>"+n2);
+        // ++가 뒤에 있으면 다른 연산자를 먼저 계산하고, 1증가 cf.>앞에 있으면 증가시킨 후 다른 연산자 계산.
+        var result5 = ++n2 + 10; //result =17, n2 =7;
+        document.write("<br/>"+" result5 ->"+result5, " n2-> " +n2);
+
+        /* 비교(관계)연산자 */
+        var a= 3;
+        var b= "3";
+        var r1= a==b; //true 값만 비교
+        var r2 = a===b //false 값과 데이터형까지 비교
+        console.log('r1->'+r1);
+        console.log('r2->'+r2);
+
+        // n1의 값이 100이상이면  true, 100 미만이면 false
+        var r3= n1 >=100;
+        console.log('r3 ->', r3);
+        console.log(!r3);
+        // n1의 값이 5이상 10이하이면 true, 아니면 false
+        n1 =12;
+        var r4= n1>=5 && n1 <= 10;
+        console.log("r4->",r4);
+
+        //삼항연산자
+        // (조건식)?참일때:거짓일때;
+        // var r5=(n1>n2)?"n1은 n2보다 크다.":"n1은 n2보다 작다.";
+        var r5=(n1<n2)?n1*2:n2*3;
+        document.write("<br/>r5->",r5);
+
+    </script>
+</body>
+</html>
