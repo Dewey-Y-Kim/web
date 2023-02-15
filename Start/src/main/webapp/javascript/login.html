@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <title>Document</title>
+
+    <style>
+            /*초기화*/
+        ul, li{
+            margin:0; pedding:0;list-style-type: none;
+        }
+        section a:link, section a:visited, section a:hover{
+            color : grey;
+            text-decoration: none;
+        }
+        section{ 
+            /* 전체 레이아웃 */
+            width:540px; margin :100px auto;
+        }
+        section>h1, section>div{
+            text-align:center;
+        }
+        section>div{
+            padding:50px 0px;
+        }
+        #logForm input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+           
+        }
+        #logForm input[type=submit]{
+            width:525px; background:rgb(12,130,233);
+            color=white;
+            font-size:1.2em;
+        }
+        #etc>li{ /* 선택자 재확인필요*/
+            float : left;
+            width: 33.3%;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function loginCheck(){
+            //아이디와 비밀번호를 유효성 검사
+            if(document.getElementById("userid").value==""){
+                alert("아이디를 입력하세요.");
+                return false; /* return 을 만나면 함수 실행이 종료된다. */
+            }
+            //아이디의 유효성을 검사
+            //         ^ : 처음부터     $ : 끝까지  
+            console.log(document.getElementsByName("userid".value));
+            var reg = /^[A-Za-z]{1}[A-Za-z0-9]{4,14}$/; //정규표현식
+            //test() : 정규표현식에 만족하면 true, 불만족 false
+            if(!reg.test(document.getElementById("userid").value)){
+                alert("아이디는 5~15자의 영문, 숫자만 가능합니다.");
+                return false;
+            }
+            //비밀번호 5~15글자
+            var reg = /^[A-Za-z]{5-15}$/;
+            if(document.getElementById("userpwd").value==""){
+                alert("비밀번호를 입력해주세요");
+                return false;
+            }
+            if(!reg.test(document.getElementById("userpwd").value)){
+                alert("비밀번호를 입력해주세요.");
+                return false;
+            }
+        }        
+    </script>
+</head>
+<body>
+    <section>
+        <h1>서울시 통합 회원 로그인</h1>
+        <div>
+            서울특별시 누리집을 방문해주셔서 감사합니다.<br/>
+            로그인하시면 보다 편리하게 서비스 이용이 가능합니다.
+        </div>
+        
+    <form action="#" id="logForm" method="post" onsubmit="loginCheck()">
+        <ul>
+            <li> <input type="text" name="userid" id="userid" placeholder="아이디(5~15자의 영문, 숫자만 가능)" ) /> </li>
+            <li> <input type="password" name="userpwd" id="userpwd" placeholder="비밀번호"/> </li>
+            <li> <input type="submit" value="로그인"/></li>
+        </ul>
+        
+        <li>
+            <ul id="etc">
+                <li><a href="#">아이디 찾기</a></li>
+                <li><a href="#">비밀번호 찾기</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </li>
+
+    </form>
+    </section>
+</body>
+
+</html>

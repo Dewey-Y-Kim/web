@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>popup</title>
+    <script>
+        function chkState(){
+            //checkbox의 체크유무를 확인하여 체크상태(true)일 쿠키를 저장한다.
+            var boo = document.getElementById("chk").checked;
+            if(boo){ //checked가 true일때 실행됨
+                //쿠키기록
+                //현재 날짜
+                var now=new Date();
+                console.log(now);
+            
+                var date = now.getDate();
+                console.log(date);
+                now.setDate(date+1);
+                console.log(now);
+                //                 변수=상수;저장위치;소멸날짜
+                document.cookie = "popup=yes;path=/;exprires="+now;
+                window.close();
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="../img/20221225.jpg" width="400px"/>;
+    <div>
+        <input type="checkbox" name="chk" id="chk"/> 오늘 그만 보기 ;
+        <input type="button" value="Close" ip="closeOk" onclick="chkState()" />
+    </div>
+</body>
+</html>
