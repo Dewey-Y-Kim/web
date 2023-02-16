@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	http://cloud.google.com/maps-plaform에서 인증키 받기
+	
+ -->
+<Style>
+	*{margin 0; padding 1;}
+	#gMap{height :700px; border : 1px solid black}
+</Style>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=키주소&callback=initMap"></script>
+</head>
+<body>
+<div id="gMap"></div>
+<script>
+	/* 지도에 표시할 위도 경도*/
+	var latitude=37.5729503;
+	var longitude=126.9793578;
+	function initMap(){
+		//
+		var myCenter = new google.maps.LatLng(latitude,longitude);
+		//옵션
+		var mapProperty = {
+				center : myCenter,
+				zoom :  18,//0~21 21 가장확대
+				mapTypeId :google.maps.MapTypeId.ROADMAP //종류(ROADMAP. HYBRID, STEELITE, TERRAIN)
+				
+		}
+		//맵생성
+		var map = new google.maps.Map(document.getElementById('gMap'),mapProperty);
+		
+		//marker
+		var marker = new google.maps.Marker({
+			//표시할 곳
+			position : myCenter,
+			map:map,
+			icon : 'icon.png',
+			title : '풍선도움말'
+		});
+		marker.setMap(map);
+		
+		
+		var information ="위도 : "+latitude
+			information +="<br/>경도 : "+ longitude
+			// information += "<br/><a href='https://www.seoul.go.kr' target='_blank'><img src='../img/arrow_1.png' width='80'px height='50'/></a>" 
+		var infor= new google.maps.InfoWindow({content:information});
+		
+		google.maps.event.addListener( marker,'click',function(){infor.open(map,marker) } );
+		
+		var myCity = new google.maps.Circle({
+			center : myCenter,
+			radius : 50, //m단위
+			strokeColor : 'blue', // 선색
+			strokeOpacity: 0.4,
+			strokeWidth : 2,
+			fillColor : 'pink',
+			fillOpacity : 0.2
+		});
+		myCity.setMap(map);
+		
+		
+	}
+</script>
+</body>
+</html>

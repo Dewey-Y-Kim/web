@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	https://jqeuryui.com/download/all
+
+ -->
+
+<link rel="stylesheet" href="../jquery-ui.min.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="../jquery-ui.min.js"></script>
+<style>
+	#dialogOpen, #scView{
+		width:600px; font-size:1.5em; text-align:center; margine :0 auto;
+	}
+	#dialogOpen{background:#ffd;}
+	#scView{ background : #fdf;}
+	/* dialog 스타일*/
+	#dialog input[type=text], #dialog label{
+		margin-bottom:12px; padding 5px; width:95$;
+	}
+</style>
+
+<script>
+	$(function(){
+		$("#dialogOpen").click(function(){
+			$("#dialog").dialog('open');
+		})
+		$('#dialog').dialog({
+					autoOpen:false, //기본 : true
+					
+					buttons:{
+						submit : function(){
+								var name = $("#event-name").val();
+								var date = $("#eventr-date").val();
+								
+								$("#scView").append("<p>"+date+" : "+name+"</p>");
+								
+								// 초기화
+								$("#event-name").val("");
+								$("#event-date").val("");
+								
+						},
+						초기화 : function(){
+							$("#event-name").val("");
+							$("#event-date").val("");
+						},
+						종료 : function(){
+							$("#event-name").val("");
+							$("#event-date").val("");
+							$('#dialog').dialog('close');
+						}
+					}, //button
+					modal : true //
+				}// dialog
+		)
+		$('#event-date').datepicker({
+			dateFormat : 'yy년 m월 dd일',
+			numberOfMonths : 2
+		})
+	});
+</script>
+</head>
+
+<body>
+<div id="dialogOpen"> 일정등록 </div>
+<hr/>
+<div id="scView"><!--일정표시-->
+일정 표시 <hr/> 
+	
+</div>
+<div id='dialog' title='Jquery Dialog'> <!-- dialog window title: 일정등록창 제목-->
+	<h2>일정을 등록해주세요</h2>
+	
+		<label for='event-name'> 일정이름 : </label> <input type="text" id='event-name'/><br/>
+		<label for='event-date'> 날짜선택 : </label> <input type="text" id='event-date'/>
+	</div>
+</body>
+</html>

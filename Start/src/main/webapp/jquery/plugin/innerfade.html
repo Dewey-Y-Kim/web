@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	https://gist.github.com/coolniikou/665255
+	1.jquery.js
+	2.innerfade.js
+		
+ -->
+ <style>
+ 	ul, li{ margine:0;	padding:0;	list-style-type:non; 	}
+ 	$innerImg{width:400px;height:300px;
+ 	
+ </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="jquery.innerfade.js"></script>
+<script>
+	$(function(){
+		$("#innerImg").innerfade({
+			animationtype:'slide',
+			speed: 'slow',
+			timeout:1000,
+			type: 'random'  // 기본'sequence','random_start'
+		});
+	})
+</script>
+
+</head>
+<body>
+
+<ul id="innerImg">
+	<li><a href="https://github.com"><img src="../../img/sky1.gif"/></a></li>
+	<li><a href="https://github.com"><img src="../../img/glass1.gif"/></a></li>
+	<li><a href="https://github.com"><img src="../../img/glass2.gif"/></a></li>
+	<li><a href="https://github.com"><img src="../../img/glass3.gif"/></a></li>
+</ul>
+</body>
+</html>
